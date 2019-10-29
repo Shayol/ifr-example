@@ -14,7 +14,7 @@
   </head>
   <body>
     <iframe
-      src="https://player.vimeo.com/video/235786457?playsinline=0&controls=0"
+      src=""
       width="640"
       height="360"
       frameborder="0"
@@ -24,10 +24,14 @@
     <button>Play</button>
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script>
+      var src =
+        "https://player.vimeo.com/video/235786457?playsinline=0&controls=0";
       var iframe = document.querySelector("iframe");
-      var player = new Vimeo.Player(iframe);
+
       var button = document.querySelector("button");
       button.addEventListener("click", function() {
+        iframe.src = src;
+        var player = new Vimeo.Player(iframe);
         player.play();
       });
     </script>
